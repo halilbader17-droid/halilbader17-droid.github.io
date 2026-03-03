@@ -891,7 +891,8 @@
     }
 
     // Build WhatsApp message
-    const msg = `🛵 *طلب جديد — واصلني*\n\n👤 الاسم: ${name}\n📞 الهاتف: ${phone}\n📍 العنوان: ${address}\n🏪 المحل: ${restaurant}\n📦 الطلب: ${details}\n💵 الدفع: ${payment === 'cash' ? 'كاش' : 'تحويل'}`;
+    const mapsLink = `https://www.google.com/maps/search/${encodeURIComponent(address + ' أولاد تايمة')}`;
+    const msg = `🛵 *طلب جديد — واصلني*\n\n👤 الاسم: ${name}\n📞 الهاتف: ${phone}\n📍 العنوان: ${address}\n🗺️ موقع الزبون: ${mapsLink}\n🏪 المحل: ${restaurant}\n📦 الطلب: ${details}\n💵 الدفع: ${payment === 'cash' ? 'كاش' : 'تحويل'}\n\n*للسائق: اضغط على الرابط فوق باش تبدأ الملاحة 🚗*`;
 
     const encoded = encodeURIComponent(msg);
     window.open(`https://wa.me/212679610616?text=${encoded}`, '_blank');
